@@ -7,4 +7,6 @@ FROM payara/micro:5.2020.2
 
 COPY --from=build /usr/src/app/target/dz01.war $DEPLOY_DIR
 
-CMD ["--deploymentDir", "/opt/payara/deployments", "--contextroot", "ROOT"]
+EXPOSE 6900 8000
+
+CMD ["--deploymentDir", "/opt/payara/deployments", "--contextroot", "ROOT", "--port", "8000"]
