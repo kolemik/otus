@@ -1,35 +1,17 @@
-# MicroProfile generated Application
+# OTUS
+## dz01
 
-## Introduction
+How to build docker image:
+    
+    docker image build -t kolemik:dz01 .
+    
+How to run docker image:
 
-MicroProfile Starter has generated this MicroProfile application for you containing some endpoints which are called from the main application (see the `service-a` directory)
+    docker run -d -p 8080:8080 kolemik:dz01
+    
+How to check URLs:
 
-The generation of the executable jar file can be performed by issuing the following command
+* http://localhost:8080/dz01/controller/health
+* http://localhost:8080/dz01/controller/hello
+* http://localhost:8080/dz01/controller/hello/Qwe
 
-    mvn clean package
-
-This will create an executable jar file **dz01-microbundle.jar** within the _target_ maven folder. This can be started by executing the following command
-
-    java -jar target/dz01-microbundle.jar --port 8180
-
-
-
-## Specification examples
-
-
-### JWT Auth
-
-Have a look at the **TestSecureController** class (main application) which calls the protected endpoint on the secondary application.
-The **ProtectedController** contains the protected endpoint since it contains the _@RolesAllowed_ annotation on the JAX-RS endpoint method.
-
-The _TestSecureController_ code creates a JWT based on the private key found within the resource directory.
-However, any method to send a REST request with an appropriate header will work of course. Please feel free to change this code to your needs.
-
-
-
-
-### Rest Client
-
-A type safe invocation of HTTP rest endpoints. Specification [here](https://microprofile.io/project/eclipse/microprofile-rest-client)
-
-The example calls one endpoint from another JAX-RS resource where generated Rest Client is injected as CDI bean.
