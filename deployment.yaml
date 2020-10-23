@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
     name: dz01-deployment
 spec:
-    replicas: 3
+    replicas: 1
     selector:
        matchLabels:
           app: dz01-app
@@ -18,3 +18,15 @@ spec:
             ports:
               - name: web 
                 containerPort: 8000
+            readinessProbe:
+              httpGet:
+                path: /otusapp/kolemik/health
+                port: web
+              failureThreshold: 1
+              periodSeconds: 10
+            startupProbe:
+              httpGet:
+                path: /otusapp/kolemik/hello
+                port: web
+              failureThreshold: 3
+              periodSeconds: 30
