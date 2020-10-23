@@ -7,7 +7,7 @@ import javax.ws.rs.core.Application;
 /**
  *
  */
-@ApplicationPath("/dz01")
+@ApplicationPath("/otusapp")
 @ApplicationScoped
 public class App extends Application {
 }

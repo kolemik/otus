@@ -6,7 +6,7 @@ import javax.ws.rs.PathParam;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-@Path("/controller")
+@Path("/kolemik")
 public class Controller {
 
     @GET
