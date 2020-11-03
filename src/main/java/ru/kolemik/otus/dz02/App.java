@@ -1,4 +1,4 @@
-package ru.kolemk.otus.dz01;
+package ru.kolemik.otus.dz02;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.ApplicationPath;

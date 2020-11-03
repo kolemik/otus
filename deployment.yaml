@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: dz01-deployment
+    name: dz02-deployment
 spec:
-    replicas: 3
+    replicas: 1
     selector:
        matchLabels:
-          app: dz01-app
+          app: dz02
     template:
        metadata:
           labels:
-             app: dz01-app
+             app: dz02
        spec:
           containers:
-          - name: dz01
-            image: kolemik/otus:dz01
+          - name: dz02
+            image: kolemik/otus:dz02
             ports:
               - name: web 
                 containerPort: 8000

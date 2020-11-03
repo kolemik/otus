@@ -1,10 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: dz01-service
+  name: dz02-service
+  labels:
+    app: dz02
 spec:
   selector:
-    app: dz01-app
+    app: dz02-app
   ports:
     - protocol: TCP
       port: 9000
