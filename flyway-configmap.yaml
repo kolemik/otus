@@ -1,0 +1,36 @@
+apiVersion: v1
+data:
+  V1__InitialMyTable.sql: |
+    CREATE TABLE MyTable (
+        MyColumn VARCHAR(100) NOT NULL
+    );
+  V2__InsertMyTable.sql: |+
+    INSERT INTO MyTable VALUES ('qwe');
+    INSERT INTO MyTable VALUES ('asd');
+    INSERT INTO MyTable VALUES ('zxc');
+
+  V3__User.sql: |
+    CREATE TABLE User (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(100) NOT NULL
+    );
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2020-11-17T21:30:32Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:V1__InitialMyTable.sql: {}
+        f:V2__InsertMyTable.sql: {}
+        f:V3__User.sql: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2020-11-17T21:30:32Z"
+  name: flyway-config
+  namespace: default
+  resourceVersion: "42729"
+  selfLink: /api/v1/namespaces/default/configmaps/flyway-config
+  uid: 768299e8-ba6f-4a94-8edb-0db0fea0de81

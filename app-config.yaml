@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dz02-config
+data:
+  GREETING: Bonjour
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: dz02-secret
+type: Opaque
+data:
+  DATABASE_URI: cG9zdGdyZXNxbCtwc3ljb3BnMjovL215dXNlcjpwYXNzd2RAcG9zdGdyZXMvbXlhcHAK

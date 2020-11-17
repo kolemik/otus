@@ -11,10 +11,10 @@
     <data-source>
         <name>java:global/DataSource</name>
         <class-name>org.postgresql.ds.PGSimpleDataSource</class-name>
-        <server-name>postgres</server-name>
+        <server-name>postgres-postgresql</server-name>
         <port-number>5432</port-number>
         <database-name>postgres</database-name>
         <user>postgres</user>
-        <password>password</password>
+        <password>sAnJTIv2tS</password>
     </data-source>
 </web-app>

@@ -88,6 +88,7 @@ public class Controller {
             e.printStackTrace();
             hostname = "[ERROR: " + e.getMessage() + "]";
         }
-        return String.format("Hello, %s from %s!", name, hostname);
+        String greeting = System.getenv().getOrDefault("GREETING", "Hello");
+        return String.format("%s, %s from %s!", greeting, name, hostname);
     }
 }

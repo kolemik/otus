@@ -6,7 +6,7 @@ metadata:
     app: dz02
 spec:
   selector:
-    app: dz02-app
+    app: dz02
   ports:
     - protocol: TCP
       port: 9000

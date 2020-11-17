@@ -15,9 +15,18 @@ spec:
           containers:
           - name: dz02
             image: kolemik/otus:dz02
+            envFrom:
+              - configMapRef:
+                  name: dz02-config
+              - secretRef:
+                  name: dz02-secret
             ports:
               - name: web 
                 containerPort: 8000
+            volumeMounts:
+              - name: flyway
+                mountPath: "/etc/flyway"
+                readOnly: true
             readinessProbe:
               httpGet:
                 path: /otusapp/kolemik/health
@@ -30,3 +39,7 @@ spec:
                 port: web
               failureThreshold: 3
               periodSeconds: 30
+          volumes:
+            - name: flyway
+              configMap:
+                name: flyway-config
