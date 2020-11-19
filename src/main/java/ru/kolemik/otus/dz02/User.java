@@ -9,10 +9,10 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import java.io.Serializable;
 
-@Entity
-@Table(name = "users")
+@Entity(name = "User")
+@Table(name = "Users")
 @NamedQueries({
-        @NamedQuery(name = "User.findAll", query = "SELECT b FROM User b")
+        @NamedQuery(name = "Users.findAll", query = "SELECT b FROM User b")
 })
 public class User implements Serializable {
 

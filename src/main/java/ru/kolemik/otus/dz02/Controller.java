@@ -25,9 +25,9 @@ public class Controller {
 
     @GET
     @Path("/users")
-    @Metered(name = "allUsers", description = "Return all users from database")
-    public List getAll() {
-        List<User> users = em.createNamedQuery("User.findAll", User.class).getResultList();
+    @Metered(name = "all_users", description = "Return all users from database")
+    public List<User> getAll() {
+        List<User> users = em.createNamedQuery("Users.findAll", User.class).getResultList();
         return users != null ? users : Collections.emptyList();
     }
 
@@ -80,6 +80,7 @@ public class Controller {
 
     @GET
     @Path("/hello/{name}")
+    @Metered(name = "say_hello_named", description = "Say hello")
     public String sayHello(@PathParam("name") String name) {
         String hostname;
         try {

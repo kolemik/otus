@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: flyway-job
+spec:
+  template:
+    spec:
+      containers:
+        - name: flyway-job
+          image: flyway/flyway
+          envFrom:
+            - configMapRef:
+                name: dz02-config
+            - secretRef:
+                name: dz02-secret
+          volumeMounts:
+            - name: flyway
+              mountPath: "/flyway/sql"
+              readOnly: true
+          command: ["flyway", "-url=jdbc:postgresql://postgres-postgresql:5432/postgres", "-user=postgres", "-password=sAnJTIv2tS", "-connectRetries=60", "migrate"]
+      restartPolicy: Never
+      volumes:
+          - name: flyway
+            configMap:
+              name: flyway-config
+  backoffLimit: 4
+
