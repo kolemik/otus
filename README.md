@@ -3,7 +3,8 @@
 
 How to build docker image:
     
-    docker image build -t kolemik:dz02 .
+    export DOCKER_BUILDKIT=1
+    docker build -t kolemik/otus:dz02 .
     
 How to run docker image:
 
