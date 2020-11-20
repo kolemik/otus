@@ -5,6 +5,10 @@ How to build docker image:
     
     export DOCKER_BUILDKIT=1
     docker build -t kolemik/otus:dz02 .
+
+How to prepare configmap
+    
+    kubectl create configmap flyway-config --from-file=sql/ --dry-run=client -o yaml > flyway-configmap.yaml
     
 How to run docker image:
 

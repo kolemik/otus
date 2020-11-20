@@ -9,28 +9,24 @@ data:
     INSERT INTO MyTable VALUES ('asd');
     INSERT INTO MyTable VALUES ('zxc');
 
-  V3__Users.sql: |
+  V3__Users.sql: |-
     CREATE TABLE Users (
         id SERIAL PRIMARY KEY,
         name VARCHAR(100) NOT NULL
     );
+  V4__InsertUsers.sql: |-
+    INSERT INTO Users (name) VALUES ('qwe');
+    INSERT INTO Users (name) VALUES ('asd');
+    INSERT INTO Users (name) VALUES ('zxc');
+  V5__InsertUsers.sql: |-
+    INSERT INTO Users (name) VALUES ('йцу');
+    INSERT INTO Users (name) VALUES ('фыв');
+    INSERT INTO Users (name) VALUES ('ячс');
+  V6__InsertUsers.sql: |-
+    INSERT INTO Users (name) VALUES ('123');
+    INSERT INTO Users (name) VALUES ('456');
+    INSERT INTO Users (name) VALUES ('789');
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2020-11-17T21:30:32Z"
-  managedFields:
-  - apiVersion: v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:data:
-        .: {}
-        f:V1__InitialMyTable.sql: {}
-        f:V2__InsertMyTable.sql: {}
-        f:V3__User.sql: {}
-    manager: kubectl-create
-    operation: Update
-    time: "2020-11-17T21:30:32Z"
+  creationTimestamp: null
   name: flyway-config
-  namespace: default
-  resourceVersion: "42729"
-  selfLink: /api/v1/namespaces/default/configmaps/flyway-config
-  uid: 768299e8-ba6f-4a94-8edb-0db0fea0de81
