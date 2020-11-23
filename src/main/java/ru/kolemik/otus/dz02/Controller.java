@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.PATCH;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -37,10 +38,15 @@ public class Controller {
         return em.find(User.class, id);
     }
 
-    @PUT
+    @PATCH
     @Path("/user/{id}")
     @Transactional
-    public User update(User user) {
+    public User update(@PathParam("id") Long id, User user) {
+        User orig = findById(id);
+        if (orig == null) {
+            throw new IllegalArgumentException("No such User with id: " + id);
+        }
+        user.setId(id);
         em.merge(user);
         em.flush();
         return user;
@@ -56,12 +62,10 @@ public class Controller {
     }
 
     @DELETE
-    @Path("/user")
+    @Path("/user/{id}")
     @Transactional
-    public void delete(User user) {
-        if (!em.contains(user)) {
-            user = em.merge(user);
-        }
+    public void delete(@PathParam("id") Long id) {
+        User user = findById(id);
         em.remove(user);
         em.flush();
     }
