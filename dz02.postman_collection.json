@@ -205,7 +205,7 @@
 		{
 			"id": "2b6369b1-55fa-4cb4-93a0-f5036ecec1e0",
 			"key": "base_url",
-			"value": "http://arch.homework:8000"
+			"value": "http://arch.homework"
 		}
 	],
 	"protocolProfileBehavior": {}
