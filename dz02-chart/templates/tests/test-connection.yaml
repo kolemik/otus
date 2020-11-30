@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "dz02-chart.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "dz02-chart.fullname" . }}:{{ .Values.service.port }}/otusapp/kolemik/health']
   restartPolicy: Never

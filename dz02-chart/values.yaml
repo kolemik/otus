@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: kolemik/otus
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "dz02"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -37,8 +37,16 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
-  port: 80
+  type: NodePort
+  port: 9000
+
+postgresql:
+  enabled: true
+  postgresqlUsername: dz02
+  postgresqlPassword: pass
+  postgresqlDatabase: dz02
+  service:
+    port: "5432"
 
 ingress:
   enabled: false

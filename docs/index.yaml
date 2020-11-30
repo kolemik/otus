@@ -1,0 +1,21 @@
+apiVersion: v1
+entries:
+  dz02-chart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-12-01T00:50:05.0114662+03:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - dz02-database
+      version: 10.x.x
+    description: A Helm chart for dz02 OTUS
+    digest: a9f282316c48c6ca50c66c6cdeefa938c1913d32d641f7d4f779953da94c461a
+    name: dz02-chart
+    type: application
+    urls:
+    - https://kolemik.github.io/otus/dz02-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-12-01T00:50:04.9480564+03:00"
