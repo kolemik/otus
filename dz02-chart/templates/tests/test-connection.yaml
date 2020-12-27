@@ -11,5 +11,6 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
+      # Do we need in port here in case of ingress enabled?
       args: ['{{ include "dz02-chart.fullname" . }}:{{ .Values.service.port }}/otusapp/kolemik/health']
   restartPolicy: Never

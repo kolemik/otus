@@ -31,3 +31,9 @@ or
 * http://localhost:8000/otusapp/kolemik/hello
 * http://localhost:8000/otusapp/kolemik/hello/Qwe
 
+
+про хелм
+
+пароль от базы -- в values.xml
+схема базы -- как собирать её автоматически из папочки при сборки?
+апдейт базы -- через джобу
